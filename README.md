@@ -18,7 +18,7 @@ git clone https://github.com/kolyal/pet-recognition.git
 cd pet-recognition
 ```
 2. Установите зависимости:
-`pip install -r requirements.txt`
+`pip install -r Requirements.txt`
 3. Запустите сервис: `uvicorn app:app --reload`
 
 **Примеры запросов curl:**
