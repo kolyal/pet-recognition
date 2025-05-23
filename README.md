@@ -19,7 +19,7 @@ cd pet-recognition
 ```
 2. Установите зависимости:
 `pip install -r Requirements.txt`
-3. Запустите сервис: `uvicorn app:app --reload`
+3. Запустите сервис: `uvicorn main:app --reload`
 
 **Примеры запросов curl:**
 ```
