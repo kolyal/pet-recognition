@@ -21,7 +21,12 @@ cd pet-recognition
 `pip install -r requirements.txt`
 3. Запустите сервис: `uvicorn app:app --reload`
 
-По умолчанию сервис будет доступен по адресу: http://127.0.0.1:8000
+**Примеры запросов curl:**
+```
+curl -X POST http://127.0.0.1:8000/predict/json/ \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://example.com/dog.jpg"}'
+```
 
 **Стек:**
 fastapi, pydantic, requests, torch, uvicorn, jupyter notebook, git, logging, postman
@@ -47,4 +52,4 @@ fastapi, pydantic, requests, torch, uvicorn, jupyter notebook, git, logging, pos
 Обрабатываются изображения формата JPEG, PNG, WEBP; при обращении к некоторым картинкам возможна ошибка Client Error: Forbidden for url (сервер может блокировать автоматические запросы), в таком случае лучше пользоваться загрузкой с устройства.
 
 **Результат:**  
-Обучил модель, которая с высокой точносью (Val Accuracy 90.92%) предсказывает породу домашнего животного на картинке, создал веб-сервис, встроил модель, захостил через Render - https://pet-recognition-qpf3.onrender.com/ (может упасть + очень медленная обработка запросов, т.к. хостинг бесплатный).
+Обучил модель, которая с высокой точносью (Val Accuracy 90.92%) предсказывает породу домашнего животного на картинке, создал веб-сервис, встроил модель, захостил через Render - [Попробовать в браузере](https://pet-recognition-qpf3.onrender.com/) (может упасть + очень медленная обработка запросов, т.к. хостинг бесплатный).
