@@ -18,15 +18,17 @@ git clone https://github.com/kolyal/pet-recognition.git
 cd pet-recognition
 ```
 2. Установите зависимости:
-`pip install -r Requirements.txt`
-3. Запустите сервис: `uvicorn main:app --reload`
+`pip install -r Requirements.txt` (Рекомендуется создать виртуальное окружение с python 3.12.8 из-за несовместимости torch с более высокими версиями)
+3. Запустите приложение: `uvicorn main:app --reload`
 
-**Примеры запросов curl:**
+**Примеры запросов:**
+После того как сервер запущен, можно выполнить `python requests_api.py` в терминале в папке проекта  
+или через curl в PowerShell (вставить свою ссылку)  
 ```
-curl -X POST http://127.0.0.1:8000/predict/json/ \
-  -H "Content-Type: application/json" \
-  -d '{"url": "https://example.com/dog.jpg"}'
-```
+curl -Method POST "http://127.0.0.1:8000/predict/json/" `
+  -Headers @{"Content-Type"="application/json"} `
+  -Body '{"image_url":"https://example.org/dog.jpg"}'
+``` 
 
 **Стек:**
 fastapi, pydantic, requests, torch, uvicorn, jupyter notebook, git, logging, postman
