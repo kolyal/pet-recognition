@@ -28,7 +28,8 @@ cd pet-recognition
 curl -Method POST "http://127.0.0.1:8000/predict/json/" `
   -Headers @{"Content-Type"="application/json"} `
   -Body '{"image_url":"https://example.org/dog.jpg"}'
-``` 
+```
+Также можно отправлять запросы через HTML-формы
 
 **Стек:**
 fastapi, pydantic, requests, torch, uvicorn, jupyter notebook, git, logging, postman
